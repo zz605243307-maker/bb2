@@ -1,11 +1,14 @@
 const express = require('express');
-
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+    res.send('Hello World from bb2!');
 });
 
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
+// 测试其他路由
+app.get('/api', (req, res) => {
+    res.json({ message: 'API is working!' });
 });
+
+// Vercel 专用导出方式
+module.exports = app;
