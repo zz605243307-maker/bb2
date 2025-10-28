@@ -31,15 +31,6 @@ def welcome():
 def index():
     return render_template('index.html', products=products)
 
-@app.route('/filter-page')
-def index():
-    return render_template('index.html', products=products)
-
-# 添加这个测试路由
-@app.route('/test')
-def test():
-    return "测试成功！这个路由能正常工作"
-
 @app.route('/filter', methods=['GET'])
 def filter_products():
     from flask import request
@@ -124,3 +115,4 @@ def filter_products():
 if __name__ == '__main__':
 
     app.run(debug=False, port=5001)  # 改为 debug=False
+
